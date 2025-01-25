@@ -1,85 +1,91 @@
-/**
- * About component
- *
- * Space for you to describe more about yourself.
- */
-
 import React from "react";
+import "../styles/about.css";
 
-/**
- * About background image
- *
- * Below is a sample image. Upload the image of your choice into the "images"
- * directory and import here for use. Then, set imageAltText to string that 
- * represents what you see in that image.
- *
- * Need an image? Check out https://unsplash.com to download a image you
- * freely use on your site.
- */
-import image from "../images/img5.jpg";
-
-const imageAltText = "abstract background";
-
-/**
- * Sort description that expands on your title on the Home component.
- */
 const description =
-  "I am currently studying IT Automation Systems. Additionally, I have a keen interest in artificial intelligence. I always strive to learn new things and improve my skills in various";
+  "I am currently studying IT Automation Systems. Additionally, I have a keen interest in artificial intelligence. I always strive to learn new things and improve my skills in various areas.";
 
-/**
- * List of some of skills or technologies you work on, are learning,
- * passionate about, or enjoy,
- */
-const skillsList = [
-  "C++",
-  "SQL Databases",
-  "Object Oriented Programming",
-  "Artificial Intelligence",
-  "Data Structures",
-  "Optymalization of processes",
-];
+const skills = {
+  frontend: ["JavaScript", "Express.js", "Unity (in the context of Mixed Reality user interface)"],
+  backend: ["C#", "Python", "SQL", "Standard Template Library (STL)", "Docker"],
+  mixedReality: [
+    "Unity",
+    "Mixed Reality Tools",
+    "Development of a Mixed Reality GUI for HoloLens 2",
+    "Mesh Processing",
+  ],
+  generalProgramming: [
+    "C++",
+    "Python (Programming Language)",
+    "Object-Oriented Programming (OOP)",
+    "Data Structures Execution Time",
+    "Problem Solving",
+  ],
+  networkEngineering: [
+    "IP Networks (IPv4, IPv6, Ethernet)",
+    "Routing",
+    "Packet Switching",
+    "Network Security",
+    "CCNA: Introduction to Networks",
+  ],
+  projectManagementAndTools: [
+    "Project Management",
+    "GitHub",
+    "Github Flow",
+    "Teamwork",
+    "Communication",
+  ],
+};
 
-/**
- * Use this to give more information about what you are passionate about,
- * how you best work, or even a quote. This will help someone learn more
- * about you on a professional level.
- */
 const detailOrQuote =
-  "I am passionate about questioning the status quo and finding ways to improve processes. " + 
-  "I am always looking for ways to improve my skills and learn new things. "
-  
+  "I am passionate about questioning the status quo and finding ways to improve processes. " +
+  "I am always looking for ways to improve my skills and learn new things.";
+
 const About = () => {
+  const skillCategories = Object.keys(skills);
+  const leftColumnSkills = skillCategories.slice(0, Math.ceil(skillCategories.length / 2));
+  const rightColumnSkills = skillCategories.slice(Math.ceil(skillCategories.length / 2));
+
   return (
-    <section className="padding" id="about">
-      <img className="background" src={image} alt={imageAltText} />
-      <div
-        style={{
-          backgroundColor: "white",
-          width: "50%",
-          padding: "4rem",
-          margin: "3rem auto",
-          textAlign: "center",
-          borderRadius: "20px",
-        }}
-      >
+    <section className="section" id="about">
+      <div className="card">
         <h2>About Myself</h2>
-        <p className="large">{description}</p>
-        <hr />
-        <ul
-          style={{
-            textAlign: "left",
-            columns: 2,
-            fontSize: "1.25rem",
-            margin: "2rem 3rem",
-            gap: "3rem",
-          }}
-        >
-          {skillsList.map((skill) => (
-            <li key={skill}>{skill}</li>
-          ))}
-        </ul>
-        <hr />
-        <p style={{ padding: "1rem 3rem 0" }}>{detailOrQuote}</p>
+        <p>{description}</p>
+        <hr className="divider" />
+
+        <h2>Skills</h2>
+        <div className="container">
+          <div className="left-column">
+            {leftColumnSkills.map((category) => (
+              <div key={category} className="mb-6">
+                <h3 className="text-xl font-semibold mb-4">
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </h3>
+                <ul>
+                  {skills[category].map((skill) => (
+                    <li key={skill}>{skill}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="right-column">
+            {rightColumnSkills.map((category) => (
+              <div key={category} className="mb-6">
+                <h3 className="text-xl font-semibold mb-4">
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </h3>
+                <ul>
+                  {skills[category].map((skill) => (
+                    <li key={skill}>{skill}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <hr className="divder" />
+        <p className="quote">{detailOrQuote}</p>
       </div>
     </section>
   );

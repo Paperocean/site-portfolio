@@ -14,25 +14,12 @@ import Portfolio from "./Components/Portfolio";
 
 import "./styles.css";
 
-/**
- * This object represents your information. The project is set so that you
- * only need to update these here, and values are passed a properties to the
- * components that need that information.
- *
- * Update the values below with your information.
- *
- * If you don't have one of the social sites listed, leave it as an empty string.
- */
 const siteProps = {
   name: "Michał Wróblewski",
   title: "Junior IT Developer Student",
   email: "miichal.wroblewski@wp.pl",
   gitHub: "Paperocean",
-  // instagram: "microsoft",
-  // linkedIn: "satyanadella",
-  // medium: "",
-  // twitter: "microsoft",
-  // youTube: "Code",
+  linkedIn: "michał-wróblewski-31195b304",
 };
 
 // const primaryColor = "#4E567E";
@@ -43,7 +30,7 @@ const App = () => {
   return (
     <div id="main">
       <Header />
-      <Home name={siteProps.name} title={siteProps.title} />
+      <Home {...siteProps} />
       <About />
       <Portfolio />
       <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
