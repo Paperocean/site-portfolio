@@ -45,6 +45,15 @@ const About = () => {
   const leftColumnSkills = skillCategories.slice(0, Math.ceil(skillCategories.length / 2));
   const rightColumnSkills = skillCategories.slice(Math.ceil(skillCategories.length / 2));
 
+  const formattedSkillCategories = {
+    frontend: "Frontend",
+    backend: "Backend",
+    mixedReality: "Mixed Reality",
+    generalProgramming: "General Programming",
+    networkEngineering: "Network Engineering",
+    projectManagementAndTools: "Project Management And Tools",
+  };
+
   return (
     <section className="section" id="about">
       <div className="card">
@@ -56,9 +65,9 @@ const About = () => {
         <div className="container">
           <div className="left-column">
             {leftColumnSkills.map((category) => (
-              <div key={category} className="mb-6">
-                <h3 className="text-xl font-semibold mb-4">
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
+              <div key={category} className="left">
+                <h3>
+                  {formattedSkillCategories[category]}
                 </h3>
                 <ul>
                   {skills[category].map((skill) => (
@@ -70,9 +79,9 @@ const About = () => {
           </div>
           <div className="right-column">
             {rightColumnSkills.map((category) => (
-              <div key={category} className="mb-6">
-                <h3 className="text-xl font-semibold mb-4">
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
+              <div key={category} className="right">
+                <h3>
+                  {formattedSkillCategories[category]}
                 </h3>
                 <ul>
                   {skills[category].map((skill) => (

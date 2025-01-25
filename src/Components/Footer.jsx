@@ -12,7 +12,7 @@ import PropTypes from "prop-types";
 
 import devDotToIcon from "../images/socials/devdotto.svg";
 import envelopeIcon from "../images/socials/envelope.svg";
-import gitHubIcon from "../images/socials/github.svg";
+import githubIcon from "../images/socials/github.svg";
 import instagramIcon from "../images/socials/instagram.svg";
 import linkedInIcon from "../images/socials/linkedin.svg";
 import mediumIcon from "../images/socials/medium.svg";
@@ -30,7 +30,7 @@ const Footer = (props) => {
   const {
     devDotTo,
     email,
-    gitHub,
+    github,
     instagram,
     linkedIn,
     medium,
@@ -49,7 +49,7 @@ const Footer = (props) => {
         alignItems: "center",
         gap: "0.5rem",
         padding: "1rem 0 0.25rem",
-        backgroundColor: primaryColor,
+        backgroundColor: "#969696",
         width: "100vw"
       }}
     >
@@ -71,9 +71,9 @@ const Footer = (props) => {
             <img src={devDotToIcon} alt="Dev.to" className="socialIcon" />
           </a>
         )}
-        {gitHub && (
-          <a href={`https://github.com/${gitHub}`} target="_blank" rel="noopener noreferrer">
-            <img src={gitHubIcon} alt="GitHub" className="socialIcon" />
+        {github && (
+          <a href={`https://github.com/${github}`} target="_blank" rel="noopener noreferrer">
+            <img src={githubIcon} alt="GitHub" className="socialIcon" />
           </a>
         )}
         {instagram && (
@@ -128,7 +128,7 @@ Footer.defaultProps = {
 Footer.propTypes = {
   devDotTo: PropTypes.string,
   email: PropTypes.string,
-  gitHub: PropTypes.string,
+  github: PropTypes.string,
   instagram: PropTypes.string,
   linkedIn: PropTypes.string,
   medium: PropTypes.string,

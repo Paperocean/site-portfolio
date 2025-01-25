@@ -1,89 +1,86 @@
-/**
- * Portfolio component
- *
- * Highlights some of  your creations. These can be designs, websites,
- * open source contributions, articles you've written and more.
- *
- * This is a great area for you to to continually add to and refine
- * as you continue to learn and create.
- */
-
 import React from "react";
+import "../styles/portfolio.css";
 
-/**
- * Desk image
- *
- * Below is a sample desk image. Feel free to update this to an image of your choice,
- * updating below imageAltText to string that represents what you see in that image.
- *
- * Need an image? Check out https://unsplash.com to download a photo you
- * freely use on your site.
- */
-import image from "../images/img3.jpg";
-
-const imageAltText = "desk with computer and phone";
-
-/**
- * Project list
- *
- * An array of objects that will be used to display for your project
- * links section. Below is a sample, update to reflect links you'd like to highlight.
- */
 const projectList = [
+  {
+    title: "Development of a Mixed Reality GUI for HoloLens 2",
+    description: "Designed and implemented an interactive GUI for the HoloLens 2, enabling real-time tracking of head, eye, and hand movements, as well as responsive 3D object management. The application featured server integration, gaze-based mesh scanning, and efficient data processing pipelines tailored for mixed reality environments.",
+    keyFeatures: [
+      {
+        feature: "Data Processing",
+        description: "Captured and saved positional data of the head, eyes, and hands in real-time for mixed reality interactions."
+      },
+      {
+        feature: "3D Object Management",
+        description: "Dynamically imported and rendered .obj, .glb, and .gltf files using server requests, ensuring smooth and responsive interactions within the HoloLens 2 environment."
+      },
+      {
+        feature: "Mesh Scanning",
+        description: "Implemented a gaze cursor-based system to scan, process, and save mesh data. Captured meshes per frame as .obj files (vertices and triangles) and posted them to a server for further use."
+      }
+    ],
+    technologiesUsed: [
+      "Unity (3D application development)",
+      "C# (scripting)",
+      "WebRTC (real-time server communication)",
+      "Mixed Reality Toolkit (integration with HoloLens 2)",
+      "Eye, Hand, and Head Tracking (user interaction)",
+      "Mesh Processing (3D mesh export and management)"
+    ],
+    projectStructure: "The application was structured into modular components for scalability and maintainability, including directories for Cursor, Tracking, Export, Managers, and Server. Key scripts handled gaze detection, mesh management, server communication, and user interface control.",
+    outcome: "Delivered a robust HoloLens 2 application showcasing advanced real-time tracking, responsive 3D interactions, and efficient data handling, providing a foundation for innovative mixed reality solutions."
+  },
   {
     title: "Data Structures and Algorithms Time Complexity",
     description:
-    "Created a visual representation of time complexity of various data structures and algorithms.",
+      "Created a visual representation of time complexity of various data structures and algorithms.",
     url: "https://github.com/Paperocean/Data-Structure-Execution-Time-Testing",
   },
   {
     title: "Sorting Algorithms",
-    description:
-      "Created sorting algorithms in C++.",
+    description: "Created sorting algorithms in C++.",
     url: "https://github.com/Paperocean/Sorting-Algorithms",
   },
   {
     title: "My Resume Site",
-    description:
-      "Includes my experience and abilities.",
+    description: "Includes my experience and abilities.",
     url: "https://paperocean.github.io/resume/",
-  },
-  {
-    title: "Library project",
-    description:
-        "Created a library project in C++.",
-    url: "https://github.com/Paperocean/Library",
   },
 ];
 
 const Portfolio = () => {
   return (
-    <section className="padding" id="portfolio">
-      <h2 style={{ textAlign: "center" }}>Portfolio</h2>
-      <div style={{ display: "flex", flexDirection: "row", paddingTop: "3rem" }}>
-        <div style={{ maxWidth: "40%", alignSelf: "center" }}>
-          <img
-            src={image}
-            style={{
-              height: "90%",
-              width: "100%",
-              objectFit: "cover",
-              animation: "1s ease-out 0s 1 slideinLeft",
-              borderRadius: "20px",
-            }}
-            alt={imageAltText}
-          />
-        </div>
-        <div className="container">
-          {projectList.map((project) => (
-            <div className="box" key={project.title}>
-              <a href={project.url} target="_blank" rel="noopener noreferrer">
-                <h3 style={{ flexBasis: "40px" }}>{project.title}</h3>
-              </a>
-              <p className="small">{project.description}</p>
-            </div>
-          ))}
-        </div>
+    <section className="section" id="portfolio">
+      <h2>Projects</h2>
+      <div className="container grid">
+        {projectList.map((project) => (
+          <div key={project.title} className="project">
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+
+            <h4>Key Features:</h4>
+            <ul>
+              {project.keyFeatures.map((feature, index) => (
+                <li key={index}>
+                  <strong>{feature.feature}:</strong> {feature.description}
+                </li>
+              ))}
+            </ul>
+
+            <h4>Technologies Used:</h4>
+            <ul>
+              {project.technologiesUsed.map((tech, index) => (
+                <li key={index}>{tech}</li>
+              ))}
+            </ul>
+
+            <h4>Project Structure:</h4>
+            <p>{project.projectStructure}</p>
+
+            <h4>Outcome:</h4>
+            <p>{project.outcome}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

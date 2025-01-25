@@ -16,9 +16,10 @@ import "./styles.css";
 
 const siteProps = {
   name: "Michał Wróblewski",
-  title: "Junior IT Developer Student",
+  title: `IT Automation Systems
+  Student`,
   email: "miichal.wroblewski@wp.pl",
-  gitHub: "Paperocean",
+  github: "Paperocean",
   linkedIn: "michał-wróblewski-31195b304",
 };
 
