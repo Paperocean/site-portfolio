@@ -55,8 +55,7 @@
   border-bottom: 1px solid #e2e8f0;
 }
 
-
-h2 {
+.card h2 {
   text-align: center;
   font-size: 2.25rem;
   font-weight: bold;
@@ -64,10 +63,7 @@ h2 {
 }
 
 .card p {
-  font-size: 1.125rem;
-  color: #4a5568;
-  opacity: 0.9;
-  line-height: 1.75rem;
+  color: #000000;
 }
 
 .card hr {

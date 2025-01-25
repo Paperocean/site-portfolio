@@ -50,7 +50,7 @@ const Footer = (props) => {
         gap: "0.5rem",
         padding: "1rem 0 0.25rem",
         backgroundColor: "#969696",
-        width: "100vw"
+        width: "100vw",
       }}
     >
       <div
@@ -136,7 +136,6 @@ Footer.propTypes = {
   primaryColor: PropTypes.string,
   twitter: PropTypes.string,
   youTube: PropTypes.string,
-
 };
 
 export default Footer;

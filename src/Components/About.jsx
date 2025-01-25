@@ -66,9 +66,7 @@ const About = () => {
           <div className="left-column">
             {leftColumnSkills.map((category) => (
               <div key={category} className="left">
-                <h3>
-                  {formattedSkillCategories[category]}
-                </h3>
+                <h3>{formattedSkillCategories[category]}</h3>
                 <ul>
                   {skills[category].map((skill) => (
                     <li key={skill}>{skill}</li>
@@ -80,9 +78,7 @@ const About = () => {
           <div className="right-column">
             {rightColumnSkills.map((category) => (
               <div key={category} className="right">
-                <h3>
-                  {formattedSkillCategories[category]}
-                </h3>
+                <h3>{formattedSkillCategories[category]}</h3>
                 <ul>
                   {skills[category].map((skill) => (
                     <li key={skill}>{skill}</li>

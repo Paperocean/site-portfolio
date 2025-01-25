@@ -14,19 +14,26 @@ const Home = ({ name, title, github }) => {
   return (
     <section id="home" className="min-height">
       <img className="background" src={image} alt="" />
-      <div style={{
-        position: "relative",
-        margin: "0 auto", 
-        top: "15rem", width: "50rem", 
-        justifyContent: "center",
-        textAlign: "center",
-        padding: "1rem", }}>
-        <h1>{name}</h1>
-        <h2 style={{
-          width: "50%",
+      <div
+        style={{
+          position: "relative",
           margin: "0 auto",
+          top: "15rem",
+          justifyContent: "center",
+          textAlign: "center",
           padding: "1rem",
-        }}>{title}</h2>
+        }}
+      >
+        <h1>{name}</h1>
+        <h2
+          style={{
+            width: "50%",
+            margin: "0 auto",
+            padding: "1rem",
+          }}
+        >
+          {title}
+        </h2>
         <h3>GitHub: {github}</h3>
       </div>
     </section>
